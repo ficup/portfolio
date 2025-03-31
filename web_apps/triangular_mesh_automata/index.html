@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Game of life. Triangular mesh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+
+    <section id="result-section">
+
+        <output id="result-section-display-canvas">This is result</output>
+        <canvas id="result-section-stats-plot" width="800" height="200">
+            This is stats plot
+        </canvas>
+    </section>
+
+    <section id="settings-section">
+        <button id="result-section-button-generate">GENERATE</button>
+        <button id="result-section-button-startstop" disabled>START</button>
+        <button id="result-section-button-step" disabled>STEP</button>
+        
+        <h4>Długość przestrzeni:</h4>
+        <input id="settings-section-height" value="20"></input>
+        <h4>Szerokość przestrzeni:</h4>
+        <input id="settings-section-width" value="30"></input>
+        <h4>Czas między epokami(ms):</h4>
+        <input id="settings-section-delay" value="350"></input>
+
+        <h4>Żywa komórka pozostaje żywa(Ilość sąsiadów):</h4>
+        <input type="checkbox" name="rule_stay" value="0">0</input>
+        <input type="checkbox" name="rule_stay" value="1">1</input>
+        <input type="checkbox" name="rule_stay" value="2">2</input>
+        <input type="checkbox" name="rule_stay" value="3">3</input>
+        <input type="checkbox" name="rule_stay" value="4">4</input>
+        <input type="checkbox" name="rule_stay" value="5">5</input>
+        <input type="checkbox" name="rule_stay" value="6">6</input>
+
+        <h4>Powstaje nowa żywa komórka(Ilość sąsiadów):</h4>
+        <input type="checkbox" name="rule_born" value="0">0</input>
+        <input type="checkbox" name="rule_born" value="1">1</input>
+        <input type="checkbox" name="rule_born" value="2">2</input>
+        <input type="checkbox" name="rule_born" value="3">3</input>
+        <input type="checkbox" name="rule_born" value="4">4</input>
+        <input type="checkbox" name="rule_born" value="5">5</input>
+        <input type="checkbox" name="rule_born" value="6">6</input>
+
+        <!-- <button id="button-debug">DEBUG</button> -->
+
+    </section>
+
+    <!-- JS includes -->
+    <script src="./gui.js"></script>
+    <script src="./cellular_automata.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.js"></script>
+</body>

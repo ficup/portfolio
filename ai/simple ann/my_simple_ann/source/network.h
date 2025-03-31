@@ -2,8 +2,12 @@
     This is the outermost class that consist of one or more layers
 */
 
+#ifndef my_simple_ann_network
+#define my_simple_ann_network
+
 #include "layer.h"
 #include "connection.h"
+#include "node.h"
 
 #include <vector>
 #include <iostream>
@@ -24,7 +28,7 @@ class Network{
     void insertLayer(int idx, int n_nodes, bool initialStatesAreRandom, const char activation_type[]); // TODO
     void removeLayer(int idx); // TODO
     void connectLayers( int from_idx, int to_idx );
-    void connectAllLayers(); // łączy wszystkie wartswy w kolejności indeksacji
+    void connectAllLayers(); // łączy wszystkie wartswy sekwencyjnie, w kolejności indeksacji
 
     void forward(float input);
     void forward(std::vector<float> input);
@@ -38,3 +42,5 @@ class Network{
 
     void summary(); // prints the architecture
 };
+
+#endif

@@ -1,5 +1,4 @@
 #include "network.h"
-#include "node.h"
 
 #include "stdio.h"
 

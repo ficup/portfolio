@@ -1,4 +1,9 @@
 /*
+    Example 2:
+        The model learns the sinus function and can then predict value of an argument.
+*/
+
+/*
     Classes are related as follows:
         -Network
             -Layer
@@ -7,10 +12,11 @@
                         -(&)Nodes
 */
 
-// Compilation: g++ -o model ./*.cpp ../source/*.cpp
+// Compilation from source: g++ -o model ./*.cpp ../my_simple_ann/source/*.cpp
+// #include "network.h"
 
-#include "../source/network.h"
-#include "../source/node.h"
+// Compilation with installed library: g++ -o model ./*.cpp -lmysimpleann
+#include <my_simple_ann/network.h>
 
 #include <vector>
 #include <fstream>

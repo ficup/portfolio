@@ -1,3 +1,6 @@
+#ifndef my_simple_ann_activations
+#define my_simple_ann_activations
+
 #include "math.h"
 
 namespace Activation{
@@ -42,3 +45,5 @@ namespace Activation{
         return 4 / pow(( exp(-x) + exp(x) ), 2);
     }
 }
+
+#endif

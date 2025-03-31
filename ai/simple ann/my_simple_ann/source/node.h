@@ -1,3 +1,6 @@
+#ifndef my_simple_ann_node
+#define my_simple_ann_node
+
 #include <vector>
 
 class Connection;
@@ -24,3 +27,5 @@ public:
     void backpropagateError();
     void updateConnectionWeights();
 };
+
+#endif

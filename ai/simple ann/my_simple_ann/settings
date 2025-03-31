@@ -1,0 +1,13 @@
+# path to libraries on this computer
+SYSTEM_DEST_DIR=/usr/local
+# ... headers
+SYSTEM_HEADERS_DIR=$(SYSTEM_DEST_DIR)/include
+# ... executables / archives
+SYSTEM_LIB_DIR=$(SYSTEM_DEST_DIR)/lib
+
+# sub-directory with the library
+LIB_DIR_NAME=/my_simple_ann
+# name of the library
+LIB_FILE_NAME=libmysimpleann.a
+# source code of the library
+LIB_SOURCE=./source/

@@ -1,4 +1,10 @@
 /*
+    Example 1:
+        The model learns to decide whether a number is lower or higher than 5.
+        Output value 0 means "No" and 1 means "Yes"
+*/
+
+/*
     Classes are related as follows:
         -Network
             -Layer
@@ -7,10 +13,11 @@
                         -(&)Nodes
 */
 
-// Compilation: g++ -o model ./*.cpp ../source/*.cpp
+// Compilation from source: g++ -o model ./*.cpp ../my_simple_ann/source/*.cpp
+// #include "network.h"
 
-#include "../source/network.h"
-#include "../source/node.h"
+// Compilation with installed library: g++ -o model ./*.cpp -lmysimpleann
+#include <my_simple_ann/network.h>
 
 #include <vector>
 #include <fstream>
