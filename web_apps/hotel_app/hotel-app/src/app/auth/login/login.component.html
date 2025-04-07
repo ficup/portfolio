@@ -1,0 +1,48 @@
+<!--<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>-->
+<!--<form name="form" #f="ngForm" novalidate>-->
+<!--  <h2>Wprowadź nazwę użytkownika lub e-mail:</h2>-->
+<!--  <mat-form-field>-->
+<!--    <input matInput-->
+<!--           placeholder="user/user@mail.net"-->
+<!--           [(ngModel)]="model.username"-->
+<!--           required>-->
+<!--    <div *ngIf="f.submitted-->
+<!--          && !model.username.length">Wprowadź nazwę użytkownika lub e-mail</div>-->
+<!--  </mat-form-field>-->
+<!--  <h2>Wprowadź hasło:</h2>-->
+<!--  <mat-form-field>-->
+<!--    <input matInput-->
+<!--           placeholder="*****"-->
+<!--           [(ngModel)]="model.password"-->
+<!--           required>-->
+<!--    <div *ngIf="f.submitted-->
+<!--          && !model.password.length">Wprowadź hasło</div>-->
+<!--  </mat-form-field>-->
+<!--  <mat-button-toggle (click)="f.form.valid && login();">Zaloguj</mat-button-toggle>-->
+<!--  <a routerLink="/register">Zarejestruj nowego użytkownika</a>-->
+<!--</form>-->
+
+<!--<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>-->
+<!--  <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">-->
+<!--    <label for="username">Username</label>-->
+<!--    <input type="text"-->
+<!--           name="username" [(ngModel)]="model.username"-->
+<!--           #username="ngModel" required />-->
+<!--    <div *ngIf="f.submitted-->
+<!--          && !username.valid">Username is required</div>-->
+<!--  </div>-->
+<!--  <div [ngClass]="{ 'has-error': f.submitted && !password.valid }">-->
+<!--    <label for="password">Password</label>-->
+<!--    <input type="password"-->
+<!--           name="password" [(ngModel)]="model.password"-->
+<!--           #password="ngModel" required />-->
+<!--    <div *ngIf="f.submitted-->
+<!--          && !password.valid">Password is required</div>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <button [disabled]="loading">Login</button>-->
+<!--  </div>-->
+<!--</form>-->
+
+<mat-button-toggle (click)="login();">Zaloguj</mat-button-toggle>-->
+<mat-button-toggle (click)="sessionDetails();">Szczegóły sesji</mat-button-toggle>-->

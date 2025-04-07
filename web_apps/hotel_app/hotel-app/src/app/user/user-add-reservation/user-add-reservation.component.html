@@ -1,0 +1,13 @@
+<ng-container *ngIf="rooms">
+  <h2>Wybierz pokój z listy:</h2>
+<!--  <div class="reservation-message">{{reservation_message}}</div>-->
+  <div *ngFor="let room of this.rooms">
+    <div class="rooms-box" >
+      <li>Nazwa: {{room.hotel_name}}</li>
+      <li>Miasto: {{room.city}}</li>
+      <li>Pokój: {{room.room_number}}</li>
+      <li>Cena za dzień:{{room.price_per_day}} zł</li>
+      <button class="reservation-add-button" (click)="addReservation(room.id);">ZAREZERWUJ</button>
+    </div>
+  </div>
+</ng-container>

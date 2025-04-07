@@ -1,0 +1,15 @@
+<ng-container *ngIf="this.rooms_admin">
+  <h2>Lista pokoi:</h2>
+  <!--  <div class="reservation-message">{{reservation_message}}</div>-->
+  <button class="room-add-button" (click)="addNewRoom();">DODAJ NOWY POKÓJ</button>
+  <div *ngFor="let room of this.rooms_admin">
+    <div class="rooms-box" >
+      <li>Nazwa: {{room.hotel_name}}</li>
+      <li>Miasto: {{room.city}}</li>
+      <li>Pokój: {{room.room_number}}</li>
+      <li>Cena za dzień:{{room.price_per_day}} zł</li>
+      <button class="room-edit-button" (click)="updateRoom(room);">EDYTUJ</button>
+      <button class="room-delete-button" (click)="deleteRoom(room);">USUŃ</button>
+    </div>
+  </div>
+</ng-container>

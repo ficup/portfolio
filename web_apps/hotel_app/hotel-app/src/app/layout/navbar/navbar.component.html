@@ -1,0 +1,43 @@
+<nav>
+
+  <ng-container *ngIf="!adminIsActive">
+
+    <a class="button"
+       routerLink="user-reservations"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">Moje rezerwacje</a>
+
+    <a class="button"
+       routerLink="user-add-reservation"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">Dodaj rezerwację</a>
+
+  </ng-container>
+
+  <ng-container *ngIf="adminIsActive">
+    <a class="button"
+       routerLink="admin-manage-users"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">Menedżer użytkowników</a>
+
+    <a class="button"
+       routerLink="admin-manage-rooms"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">Menedżer pokoi</a>
+  </ng-container>
+
+  <a class="button"
+     routerLink="user-about"
+     routerLinkActive="activebutton"
+     ariaCurrentWhenActive="page">O nas</a>
+
+  <select name="user" class="button" (change)="changeUser();">
+   <option value="user">Admin</option>
+    <option value="admin">User</option>
+  </select>
+<!--  <a class="button"-->
+<!--     routerLink="login"-->
+<!--     routerLinkActive="activebutton"-->
+<!--     ariaCurrentWhenActive="page">Zaloguj</a>-->
+
+</nav>

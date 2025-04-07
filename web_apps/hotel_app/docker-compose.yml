@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+      
+   # Database
+   database:
+      container_name: snuffleupagus.db.elephantsql.com
+      build:
+         context: ./hotel-app-db
+         dockerfile: Dockerfile
+      ports:
+         - '7777:5432'
+      
+   # Back-end
+   backend:
+      container_name: backend
+      build:
+         context: ./hotel-app-backend
+         dockerfile: Dockerfile
+      ports:
+         - '8080:8080'
+      depends_on:
+         - database
+
+   # Front-end
+   frontend:
+      container_name: frontend
+      build:
+         context: ./hotel-app
+         dockerfile: Dockerfile
+      ports:
+         - '4200:4200'
+      depends_on:
+         - backend

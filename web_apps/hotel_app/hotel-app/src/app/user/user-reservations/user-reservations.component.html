@@ -1,0 +1,21 @@
+<ng-container *ngIf="user_reservations">
+  <h2>Moje rezerwacje:</h2>
+  <div *ngFor="let reservation of this.user_reservations">
+      <div class="reservation-box" *ngIf="reservation.user_id == active_user;">
+        <li>Termin:
+          <ul>
+            <li>Od: {{displayDate(reservation.checkin_date)}}</li>
+            <li>Do: {{displayDate(reservation.checkout_date)}}</li>
+          </ul>
+        </li>
+        <li>Hotel:
+          <ul>
+            <li>{{reservation.room.hotel_name}}, {{reservation.room.city}}</li>
+            <li>Pokój: {{reservation.room.room_number}}</li>
+            <li>Cena za dzień: {{reservation.room.price_per_day}}</li>
+          </ul>
+        </li>
+        <button (click)="deleteReservation(reservation.id);">USUŃ</button>
+      </div>
+  </div>
+</ng-container>

@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.reservation-box, .rooms-box{
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 300px;
+  padding: 10px 10px 10px 20px;
+  background-color: #cde1fc;
+}
+
+.manage-users-box{
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 300px;
+  padding: 10px 10px 10px 20px;
+  /*background-color: rgba(237, 248, 87, 0.69);*/
+  background-color: #ffff76;
+  /*opacity: revert;*/
+}
+
+/*.rooms-box{*/
+/*  border: 2px solid black;*/
+/*  border-radius: 5px;*/
+/*  width: 300px;*/
+/*  padding: 10px 10px 10px 20px;*/
+/*  background-color: rgba(128, 234, 177, 0.3);*/
+/*}*/
+
+.reservation-box > button {
+  /*background-color: rgba(255, 0, 0, 0.25);*/
+  background-color: #f63c3c;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.rooms-box > .room-edit-button {
+  /*background-color: rgba(255, 251, 0, 0.44);*/
+  background-color: #d5d52d;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.rooms-box > .room-delete-button {
+  /*background-color: rgba(255, 0, 0, 0.25);*/
+  background-color: #f63c3c;
+  border: 2px solid black;
+  cursor: pointer;
+  margin-left: 1px;
+}
+
+.room-add-button, .reservation-add-button{
+  /*background-color: rgba(37, 255, 88, 0.49);*/
+  background-color: #6fb66f;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.dialog-confirm-button{
+  /*background-color: rgba(104, 134, 164, 0.53);*/
+  /*border: 2px solid black;*/
+  /*cursor: pointer;*/
+  /*margin: 0 0 0 5px;*/
+}
+
+button:active {
+  vertical-align: top;
+  padding: 2px 3px 2px;
+}

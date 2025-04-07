@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Dodaj nowy pokój</h1>
+<div mat-dialog-content class="form-fields-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Nazwa hotelu</mat-label>
+      <input matInput placeholder="Input"  [(ngModel)]="data.hotel_name" required>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Miasto</mat-label>
+      <input matInput  placeholder="Input" [(ngModel)]="data.city" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Numer pokoju</mat-label>
+      <input matInput  placeholder="Input" [(ngModel)]="data.room_number" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cena za dzień</mat-label>
+      <input matInput  placeholder="Input" [(ngModel)]="data.price_per_day" required>
+    </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close class="dialog-confirm-button">Anuluj</button>
+    <button mat-button class="dialog-confirm-button"
+            [mat-dialog-close]="data" (click)="confirmClicked();" cdkFocusInitial >Zatwierdź</button>
+  </div>
+</div>

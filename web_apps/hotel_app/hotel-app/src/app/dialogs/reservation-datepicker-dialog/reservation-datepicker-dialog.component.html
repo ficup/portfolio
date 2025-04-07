@@ -1,0 +1,28 @@
+<mat-dialog-content>
+
+  <mat-form-field class="mat-datepicker-content">
+    <mat-label>Data zakwaterowania</mat-label>
+    <input matInput
+           [matDatepicker]="picker1"
+           (dateInput)="updateStartDate('input', $event)" (dateChange)="updateStartDate('change', $event)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="mat-datepicker-content">
+    <mat-label>Data wymeldunku</mat-label>
+    <input matInput [matDatepicker]="picker2"
+           (dateInput)="updateEndDate('input', $event)" (dateChange)="updateEndDate('change', $event)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Zamknij</button>
+    <button mat-button (click)="addReservation();">Dodaj rezerwację</button>
+    <label class="incorrect-date-warning">{{this.warning_message}}</label>
+  </mat-dialog-actions>
+
+</mat-dialog-content>

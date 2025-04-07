@@ -1,0 +1,36 @@
+<ng-container *ngIf="all_users">
+  <h2>Użytkownicy:</h2>
+  <div *ngFor="let user of this.all_users">
+    <div class="manage-users-box">
+    <h3>{{user.user_name}}</h3>
+    <h4>Kontakt do klienta:</h4>
+      <ul>
+        <li>Email: {{user.user_email}}</li>
+        <li>Telefon: {{user.user_phone}}</li>
+      </ul>
+      <button (click)="showHideUserReservations(user.id);">Pokaż rezerwacje</button>
+      <ng-container *ngIf="expanded_users[user.id.valueOf()]" class="manage-users-reservations-box">
+            <div *ngFor="let reservation of this.all_reservations[user.id.valueOf()]">
+              <div class="reservation-box" >
+                <li>Termin:
+                  <ul>
+                    <li>Od: {{displayDate(reservation.checkin_date)}}</li>
+                    <li>Do: {{displayDate(reservation.checkout_date)}}</li>
+                  </ul>
+                </li>
+                <li>Hotel:
+                  <ul>
+                    <li>{{reservation.room.hotel_name}}, {{reservation.room.city}}</li>
+                    <li>Pokój: {{reservation.room.room_number}}</li>
+                    <li>Cena za dzień: {{reservation.room.price_per_day}}</li>
+                  </ul>
+                </li>
+                <button (click)="deleteReservation(reservation.id);">USUŃ</button>
+              </div>
+            </div>
+<!--        {{all_reservations[user.id.valueOf()][0].room.hotel_name}}-->
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+
