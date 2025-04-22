@@ -1,0 +1,144 @@
+
+/* MAIN VIEW */
+content {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    height: 90vh;
+}
+
+content>div {
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr;
+    overflow:  scroll;
+}
+
+content>div>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+app_title{
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    outline: 3px solid powderblue; /* use instead of border */
+}
+
+content, 
+content > stock_view, 
+content > div > *,
+content > div > div > * {
+    font-size: 15px;
+    outline: 3px solid powderblue;
+    /* position: relative; */
+}
+
+/* STOCK_VIEW */
+
+stock_view > table, th, td, paginator {
+    border: 1px solid lightblue;
+}
+
+stock_view th{
+    text-align: center;
+}
+
+stock_view th > *{
+
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+stock_view th > a > *>*{
+    width: 3cap;
+    height: 2.5cap;
+}
+
+
+stock_view > table{
+    width: 100%;
+    overflow: scroll;
+}
+
+stock_view > data_navigator{
+    text-align: center;
+    display: grid;
+    width: 100%;
+}
+
+stock_view > data_navigator > search > *{
+    display: inline;
+}
+
+/* NEWSFEED */
+newsfeed{
+    position: relative;
+    overflow: scroll;
+    min-height: 0;
+}
+
+newsfeed > p{
+    font-size: large;
+}
+
+news_picture > img{
+    max-width: 90px;
+    max-height: 60px;
+}
+
+newsfeed > news > div{
+    display: grid;
+}
+
+/* STOCK SELECTOR */
+
+stock_selector {
+    display: grid;
+    padding: 3cap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* UPDATER */
+
+updater {
+    padding: 3cap;
+    display: grid;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+updater > form > button{
+  background-color: #e1ecf4;
+  border-radius: 3px;
+  border: 1px solid #7aa7c7;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #39739d;
+  display: inline-block;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+}
+
+updater > form > button:hover,
+updater > form > button:focus {
+  background-color: #b3d3ea;
+  color: #2c5777;
+}
+
+updater > form > button:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+/* AI Assistant */
+
+ai_assistant{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

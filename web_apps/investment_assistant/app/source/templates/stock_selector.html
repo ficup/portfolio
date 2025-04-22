@@ -1,0 +1,13 @@
+<p>Select stock:</p>
+<select name="Valid stock symbols" id="valid_stock_symbols">
+  <option value="default"> </option>
+{% for stock in valid_stocks %}
+  <option value="{{stock['symbol']}}">{{stock['name']}} ({{stock['symbol']}}) </option>
+{% endfor %}
+<script>
+  let valid_stock_symbols = document.getElementById('valid_stock_symbols');
+  valid_stock_symbols.onchange = () =>{
+    window.location.replace("/add_stock:" +valid_stock_symbols.value);
+  }
+</script>
+</select>

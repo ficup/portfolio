@@ -1,0 +1,9 @@
+<div>Aktywna akcja: {{active_stock}}</div>
+{% if data_is_up_to_date == 1 %}
+<div style="color: green;">Status: Dane są aktualne</div>
+{% else %}
+<div style="color: red;">Status: Dane NIE są aktualne </div>
+{% endif %}
+<form action="/update/all" method="post">
+    <button name="update_button" value="">Update</button>
+</form>

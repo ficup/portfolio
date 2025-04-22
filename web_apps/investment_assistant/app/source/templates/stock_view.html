@@ -1,0 +1,79 @@
+
+<table>
+    <tr id="header_row">
+      {% for column in data_columns %}
+      <th>
+        <div>{{column['text']}}</div>
+        <a href="/update/sort:{{column['key']}},desc">
+          <button>
+            <img src="./static/assets/sort-descending.png">
+          </button>
+        </a>
+        <a href="/update/sort:{{column['key']}},asc">
+          <button>
+              <img src="./static/assets/sort-ascending.png">
+          </button>
+        </a>
+      </th>
+      {% endfor %}
+    </tr>
+{% if stock_data != None %}
+    {% for t in stock_data %}
+    <tr>
+        <td>{{ t['date'] }}</td>
+        <td>$ {{ t['stock_price'] }}</td>
+        <td>{{ '%0.2f'| format(100*t['daily_relative_change']) }} %</td>
+    </tr>
+    {% endfor %}
+{% endif %}
+</table>
+<data_navigator>
+  <paginator>
+    <a id="paginator_left" href="/update/page/decrement">&laquo;</a>
+    <page_selector>
+      <label for="current_page">Obecna strona:</label>
+      <input type="text" id="paginator_page" name="paginator_page" value="{{data_nav['page']}}">
+    </page_selector>
+    <a id="paginator_right" href="/update/page/increment">&raquo;</a>
+  </paginator>
+  <search>
+    <p>Przedział czasowy:</p>
+    <label>Od:</label>
+    <input type="text" id="date_start" name="date_start" placeholder="yyyy-mm-dd" value="{{data_nav['start'][1:-1]}}">
+    <label>Do:</label>
+    <input type="text" id="date_end" name="date_end" placeholder="yyyy-mm-dd" value="{{data_nav['end'][1:-1]}}">
+  </search>
+</data_navigator>
+<script>
+  // Update page
+  let paginator_page = document.getElementById('paginator_page');
+  paginator_page.oninput = ()=>{
+    if( !isNaN(paginator_page.value)  && paginator_page.value!='' ){
+      window.location.replace("/update/page:" + paginator_page.value);
+    }
+    else{
+      console.log("Page is NaN");
+    }
+  }
+
+  // Update date range
+  let date_start = document.getElementById('date_start');
+  let date_end = document.getElementById('date_end');
+
+  date_start.oninput = () =>{
+    if( !isNaN(Date.parse(date_start.value)) && date_start.value!='' && date_start.value.length == 10 ){
+      console.log(date_start.value);
+      window.location.replace("/update/date_start:" + date_start.value);
+    }
+    else{
+      console.log("Pedał");
+    }
+  }
+  date_end.oninput = () =>{
+    if( !isNaN(Date.parse(date_end.value)) && date_end.value!='' && date_start.value.length == 10  ){
+      window.location.replace("/update/date_end:" + date_end.value);
+    }
+  }
+
+
+</script>

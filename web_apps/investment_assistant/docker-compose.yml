@@ -1,0 +1,23 @@
+version: '3.10'
+
+services:
+      
+   # Database
+   database:
+      container_name: db
+      build:
+         context: ./db/
+         dockerfile: Dockerfile
+      ports:
+         - '9009:5432'
+         
+   # App
+   app:
+      container_name: app
+      build:
+         context: ./app
+         dockerfile: Dockerfile
+      ports:
+         - '5000:5000'
+      depends_on:
+         - database

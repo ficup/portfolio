@@ -1,0 +1,17 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+
+<app_title>Investment assistant</app_title>
+<content>
+    <stock_view>{% include 'stock_view.html' %} </stock_view>
+    <div>
+        <div>
+            <stock_selector>{% include 'stock_selector.html' %}</stock_selector>
+            <updater>{% include 'updater.html' %}</updater>
+        </div>
+        <ai_assistant>{% include 'ai_assistant.html' %}</ai_assistant>
+        <newsfeed>{% include 'newsfeed.html' %}</newsfeed>
+    </div>
+</content>

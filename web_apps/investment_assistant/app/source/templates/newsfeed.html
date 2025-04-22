@@ -1,0 +1,16 @@
+<p>Newsfeed:</p>
+{% if newsfeed != None %}
+    {% for news in newsfeed %}
+    <news>
+        <news_picture>
+            <img src="{{news['image_url']}}" alt="Italian Trulli">
+        </news_picture>
+        <div>
+            <news_title>
+                <a href="{{news['url']}}">{{news['title']}}</a>
+            </news_title>
+            <news_description>{{news['description']}}</news_description>
+        </div>
+    </news>
+    {% endfor %}
+{% endif %}

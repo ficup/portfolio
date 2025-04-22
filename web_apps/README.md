@@ -11,3 +11,10 @@ Used technologies:
 **_Angular(Typescript, HTML), Spring/Java, PostgreSQL, Docker_**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This is a hotel reservation app. The app consist of three docker containers: a Spring server, an Angular frontend and a PSQL database. The app can be built and started by using _docker-compose up_. Currently there are 2 fixed user and admin context. Authentication, multi-user support and improved UI might be added in the future. More details can be read in the project documentation (Polish).
+
+## Investment assistant app:
+Used technologies:
+<br>
+**_Flask/Python, HTML, JavaScript_, MySQL, Docker_**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Presented app is a web-based tool aimed to provide a stock investor with useful toolsthat can help in buying and selling stock shares and other financial assets. Can be instantiated with docker-compose.
